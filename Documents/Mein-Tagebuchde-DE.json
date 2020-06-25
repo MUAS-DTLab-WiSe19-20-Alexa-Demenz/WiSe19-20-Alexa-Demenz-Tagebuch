@@ -1,0 +1,427 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "mein tagebuch",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "wann erinnst du mich",
+                        "wann kommen die Erinnerungen",
+                        "wann werde ich erinnert",
+                        "nenne mir die Befehle",
+                        "was kannst du",
+                        "welche Befehle gibt es",
+                        "hilfe",
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "Eintrag_Erstellen",
+                    "slots": [
+                        {
+                            "name": "new_entry",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{new_entry}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Eintrag machen",
+                        "ich möchte einen Eintrag erstellen",
+                        "schreibe in mein Tagebuch",
+                        "mache einen Eintrag",
+                        "Eintrag erstellen",
+                        "erstelle einen Eintrag"
+                    ]
+                },
+                {
+                    "name": "Eintrag_Einsprechen_Abbruch",
+                    "slots": [],
+                    "samples": [
+                        "breche den Eintrag ab",
+                        "breche die Aufnahme ab",
+                        "Eintrag abbrechen",
+                        "Eintrag nicht abspeichern",
+                        "Aufnahme abbrechen"
+                    ]
+                },
+                {
+                    "name": "Eintrag_Einsprechen_Speichern",
+                    "slots": [
+                        {
+                            "name": "subject",
+                            "type": "AMAZON.SearchQuery",
+                            "samples": [
+                                "{subject}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Eintrag speichern",
+                        "Eintrag abspeichern",
+                        "Speichere Eintrag",
+                        "Speichere den Eintrag ab"
+                    ]
+                },
+                {
+                    "name": "Eintrag_Abrufen",
+                    "slots": [
+                        {
+                            "name": "Tag",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "Datum",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "Suche Einträge mit {Tag}",
+                        "nenne mir Einträge von {Datum} ",
+                        "zeige mir einträge von {Datum}",
+                        "Zeige mir die Einträge vom {Datum}",
+                        "Eintrag suchen mit  {Tag}",
+                        "nenne mir Einträge mit dem Stichwort  {Tag}",
+                        "welche Einträge haben das Schlagwort {Tag}",
+                        "suche {Tag} Eintrag",
+                        "suche {Tag} Einträge",
+                        "suche Eintrag mit {Tag}"
+                    ]
+                },
+                {
+                    "name": "Erinnerung_Aus_An",
+                    "slots": [
+                        {
+                            "name": "boolean",
+                            "type": "An_Aus",
+                            "samples": [
+                                "Erinnerungen {boolean}",
+                                "{boolean}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "mache die Erinnerungen {boolean}",
+                        "mache die Erinnerung {boolean}"
+                    ]
+                },
+                {
+                    "name": "Erinnerung_Aendern",
+                    "slots": [
+                        {
+                            "name": "Zahl",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{Zahl} Stunden",
+                                "{Zahl}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Erinnerungen ändern",
+                        "Erinnerung ändern",
+                        "ändere Erinnerungen",
+                        "ändere Erinnerung",
+                        "ändere das Intervall der Erinnerungen",
+                        "ändere das Erinnerungsintervall",
+                        "Erinnerungsintervall auf {Zahl} Stunden",
+                        "ändere das Intervall auf {Zahl} Stunden",
+                        "Erinnere mich alle {Zahl} Stunden"
+                    ]
+                },
+                {
+                    "name": "Eintrag_Loeschen",
+                    "slots": [
+                        {
+                            "name": "Tag",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "Datum",
+                            "type": "AMAZON.DATE"
+                        },
+                        {
+                            "name": "entry",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "lösche Eintrag vom {Datum}",
+                        "lösche Eintrag mit {Tag}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "Tag",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Aktivitäten"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Namen"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wichtig"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "An_Aus",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "aus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "an"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "Eintrag_Erstellen",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "new_entry",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.358679629165.1162592591999"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Eintrag_Abrufen",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Tag",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "Datum",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "Eintrag_Einsprechen_Speichern",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.775965247087"
+                    },
+                    "slots": [
+                        {
+                            "name": "subject",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.230440068534.125586985078"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Erinnerung_Aus_An",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "boolean",
+                            "type": "An_Aus",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.433859220612.506138864056"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Erinnerung_Aendern",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.727696633761"
+                    },
+                    "slots": [
+                        {
+                            "name": "Zahl",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1242211205408.3929430351"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Eintrag_Loeschen",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.497038254582"
+                    },
+                    "slots": [
+                        {
+                            "name": "Tag",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "Datum",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "entry",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Confirm.Intent.327796395672",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Um die Aufnahme abzubrechen sage. Eintrag abbrechen .   Um die Aufnahme abzuspeichern sage. Eintrag abspeichern  Verstanden?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.297585111514.865587900796",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Füge jetzt ein oder mehrere Tags hinzu"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.433859220612.506138864056",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Erinnerung an oder aus?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.727696633761",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Das Erinnerungsintervall wird auf {Zahl} Stunden gesetzt. Okay?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1242211205408.3929430351",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "In welchem Zeitintervall soll ich dich erinnern?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.358679629165.1162592591999",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Spreche jetzt dein Erlebnis ein"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.358679629165",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "willst du speichern. Sage einfach ja oder nein"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.775965247087",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Willst du die Tags hinzufügen ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.230440068534.125586985078",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Spreche jetzt die Schlagwörter ein"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.497038254582",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Bist du dir sicher, dass du den Eintrag {entry} vom {Datum} mit den Tags {Tag} löschen willst?"
+                    }
+                ]
+            }
+        ]
+    }
+}

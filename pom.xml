@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>sweIhm_ws2019_20</groupId>
+    <artifactId>meintagebuch</artifactId>
+    <packaging>jar</packaging>
+    <version>0.01</version>
+    <name>meintagebuch</name>
+    <url>https://github.com/sweIhm-ws2018-19/skillproject-test</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Software Engineering I</name>
+            <organization>Software Engineering I</organization>
+            <organizationUrl>https://github.com/sweIhm-ws2018-19</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/sweIhm-ws2018-19/skillproject-test.git</connection>
+        <developerConnection>scm:git:https://github.com/sweIhm-ws2018-19/skillproject-test.git</developerConnection>
+        <url>https://github.com/sweIhm-ws2018-19/skillproject-test.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.amazon.alexa</groupId>
+            <artifactId>ask-sdk</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-lambda-java-log4j2</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.openpojo</groupId>
+            <artifactId>openpojo</artifactId>
+            <version>0.8.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.0.0</version>
+            <scope>test</scope>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <artifactId>byte-buddy</artifactId>
+                    <groupId>net.bytebuddy</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>1.9.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+</project>

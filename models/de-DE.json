@@ -1,0 +1,142 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "lieblingsfarbe",
+            "intents": [{
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "MyColorIsIntent",
+                    "slots": [{
+                        "name": "Color",
+                        "type": "LIST_OF_COLORS"
+                    }],
+                    "samples": [
+                        "Die Lieblingsfarbe ist {Color}",
+                        " Meine Lieblingsfarbe ist {Color}",
+                        " Ich mag {Color}",
+                        "{Color}"
+                    ]
+                },
+                {
+                    "name": "WhatsMyColorIntent",
+                    "slots": [],
+                    "samples": [
+                        "Lieblingsfarbe",
+                        "frage nach meiner Lieblingsfarbe",
+                        "was ist meine Lieblingsfarbe",
+                        "welche Farbe mag ich am liebsten",
+                        "sag mir meine Lieblingsfarbe"
+                    ]
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [{
+                "name": "LIST_OF_COLORS",
+                "values": [{
+                        "name": {
+                            "value": "grün"
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "blau"
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "lila"
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "rot"
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "orange"
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "rosa"
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "türkis"
+                        }
+                    },
+                    {
+                        "name": {
+                            "value": "gelb"
+                        }
+                    }
+                ]
+            }]
+        },
+        "dialog": {
+            "intents": [{
+                "name": "MyColorIsIntent",
+                "confirmationRequired": true,
+                "prompts": {
+                    "confirmation": "Confirm.Intent.131582078562"
+                },
+                "slots": [{
+                    "name": "Color",
+                    "type": "LIST_OF_COLORS",
+                    "confirmationRequired": false,
+                    "elicitationRequired": true,
+                    "prompts": {
+                        "elicitation": "Elicit.Slot.131582078562.671006431195"
+                    }
+                }]
+            }]
+        },
+        "prompts": [{
+                "id": "Elicit.Slot.131582078562.671006431195",
+                "variations": [{
+                        "type": "PlainText",
+                        "value": "Bitte sage mir Deine Lieblingsfarbe"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Welche Farbe ist das?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Was ist deine Lieblingsfarbe?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.131582078562",
+                "variations": [{
+                    "type": "PlainText",
+                    "value": "Ich habe {Color} verstanden. "
+                }]
+            }
+        ]
+    }
+}

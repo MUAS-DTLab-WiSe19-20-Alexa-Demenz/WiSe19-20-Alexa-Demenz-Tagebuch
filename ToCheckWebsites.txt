@@ -1,0 +1,7 @@
+Code quality:
+https://ec.cs.hm.edu/dashboard?id=swe-Di-04
+Benutzername: swe_student PW: swe_student
+Alternativ: SolarLint als Intellij-Plugin
+
+Jenkins:
+http://ec.cs.hm.edu:8080/job/swe_ws2019_20/job/swe-Di-04/
